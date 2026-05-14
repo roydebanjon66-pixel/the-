@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About — NEXUS GYM</title>
+<meta name="description" content="The story behind NEXUS GYM. Our mission, vision, and the elite team that makes it all happen."/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/animations.css"/>
+<link rel="stylesheet" href="css/logo.css"/>
+<style>
+/* ─── ABOUT SPECIFIC ─── */
+.brand-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.brand-img { position:relative; }
+.brand-img img { width:100%; height:560px; object-fit:cover; filter:grayscale(0.3); border:1px solid var(--border); }
+.brand-img-badge {
+  position:absolute; bottom:-20px; right:-20px;
+  background:var(--lime); color:var(--black);
+  padding:24px; font-family:var(--font-head); font-weight:900;
+  font-size:1.1rem; letter-spacing:2px; text-align:center; text-transform:uppercase;
+}
+.brand-img-badge span { display:block; font-size:3rem; }
+.mv-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:64px; }
+.mv-card { padding:48px 40px; border:1px solid var(--border); background:var(--glass); border-radius:4px; }
+.mv-card h3 { font-family:var(--font-head); font-size:2rem; font-weight:900; text-transform:uppercase; margin-bottom:20px; }
+.mv-card h3 span { color:var(--lime); }
+.mv-card p { color:var(--gray); line-height:1.9; }
+.achieve-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:32px; margin-top:64px; }
+.achieve-item { text-align:center; padding:40px 20px; border:1px solid var(--border); background:var(--glass); border-radius:4px; }
+.achieve-num { font-family:var(--font-head); font-size:3.5rem; font-weight:900; color:var(--lime); display:block; margin-bottom:8px; }
+.achieve-label { font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:var(--gray); }
+.timeline { max-width:800px; margin:64px auto 0; position:relative; }
+.timeline::before { content:''; position:absolute; left:50%; top:0; bottom:0; width:1px; background:var(--border); transform:translateX(-50%); }
+.tl-item { display:flex; gap:40px; margin-bottom:60px; align-items:flex-start; }
+.tl-item:nth-child(even) { flex-direction:row-reverse; }
+.tl-dot {
+  width:16px; height:16px; border-radius:50%; background:var(--lime);
+  flex-shrink:0; margin-top:6px; box-shadow:0 0 20px rgba(182,255,59,0.5);
+  position:relative; z-index:1; margin-left:auto; margin-right:auto;
+}
+.tl-content { flex:1; background:var(--glass); border:1px solid var(--border); padding:28px 32px; border-radius:4px; }
+.tl-year { font-size:0.65rem; color:var(--lime); letter-spacing:2px; font-weight:700; text-transform:uppercase; margin-bottom:8px; }
+.tl-content h4 { font-family:var(--font-head); font-size:1.3rem; font-weight:800; text-transform:uppercase; margin-bottom:8px; }
+.tl-content p { color:var(--gray); font-size:0.88rem; line-height:1.7; }
+.gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:64px; }
+.gallery-item { overflow:hidden; border-radius:4px; height:280px; }
+.gallery-item img { width:100%; height:100%; object-fit:cover; filter:grayscale(0.4); transition:all 0.6s; }
+.gallery-item:hover img { filter:grayscale(0); transform:scale(1.05); }
+.gallery-item.tall { grid-row:span 2; height:576px; }
+.trainer-full-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:64px; }
+.tf-card-full { border:1px solid var(--border); border-radius:4px; overflow:hidden; background:var(--card); text-align:center; }
+.tf-card-full img { width:100%; height:280px; object-fit:cover; filter:grayscale(0.5); transition:all 0.5s; }
+.tf-card-full:hover img { filter:grayscale(0); }
+.tf-card-full .tc-info { padding:24px 20px; }
+.tf-card-full h3 { font-family:var(--font-head); font-size:1.2rem; font-weight:800; text-transform:uppercase; margin-bottom:8px; }
+.tf-card-full span { font-size:0.7rem; color:var(--lime); letter-spacing:1px; text-transform:uppercase; }
+.tf-card-full p { color:var(--gray); font-size:0.8rem; margin-top:8px; }
+@media(max-width:900px){ .brand-grid,.mv-grid{grid-template-columns:1fr} .achieve-grid{grid-template-columns:repeat(2,1fr)} .timeline::before{left:16px} .tl-item,.tl-item:nth-child(even){flex-direction:column} .tl-dot{margin:0} .gallery-grid{grid-template-columns:1fr 1fr} .gallery-item.tall{grid-row:auto;height:280px} .trainer-full-grid{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:600px){ .achieve-grid{grid-template-columns:1fr 1fr} .gallery-grid{grid-template-columns:1fr} .trainer-full-grid{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<!-- PRELOADER -->
+<div id="preloader">
+  <canvas id="pl-canvas"></canvas>
+  <div class="pl-content">
+    <div class="pl-letters" id="pl-letters">
+      <span class="letter">N</span>
+      <span class="letter">E</span>
+      <span class="letter">X</span>
+      <span class="letter">U</span>
+      <span class="letter">S</span>
+    </div>
+    <div class="pl-counter" id="pl-counter">0%</div>
+    <div class="pl-scan-wrap">
+      <div class="pl-scan-line"></div>
+    </div>
+  </div>
+</div>
+
+<div id="app-wrapper" class="is-blurred">
+<div id="scroll-progress"></div>
+<nav>
+  <a class="nav-logo" href="index.html">
+    <svg class="logo-svg-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="lgN" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#B6FF3B"/><stop offset="100%" stop-color="#7EC820"/></linearGradient></defs><polygon points="16,1 30,8.5 30,23.5 16,31 2,23.5 2,8.5" stroke="url(#lgN)" stroke-width="1.5" fill="none"/><path d="M10 22 L10 10 L22 22 L22 10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="logo-wordmark">NEX<em>US</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="pricing.html" class="nav-cta">Join Now</a></li>
+  </ul>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="page-hero noise-bg">
+  <div class="bg-grid"></div>
+  <div class="float-shape s1"></div>
+  <div class="float-shape s2"></div>
+  <div class="page-hero-content">
+    <div class="section-tag reveal">Our Story</div>
+    <h1 class="reveal d-1">FORGING <span>LEGENDS</span><br>SINCE 2016</h1>
+    <p class="reveal d-2">Built on a foundation of passion, science, and an obsession with results. NEXUS is more than a gym — it's a movement.</p>
+  </div>
+</section>
+
+<!-- BRAND STORY -->
+<section class="section">
+  <div class="container">
+    <div class="brand-grid">
+      <div class="brand-img reveal-left">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80" alt="NEXUS Gym Interior"/>
+        <div class="brand-img-badge"><span>8+</span>Years of Excellence</div>
+      </div>
+      <div class="reveal-right">
+        <div class="section-tag">Who We Are</div>
+        <h2 class="section-title">THE NEXUS<br><span>ORIGIN STORY</span></h2>
+        <p style="color:var(--gray);line-height:1.9;margin-bottom:24px">Founded in 2016 by former professional athlete Marcus Dean, NEXUS GYM was born from a frustration with mediocre fitness experiences. Marcus envisioned a space where elite training methodology met world-class facilities — accessible to everyone willing to put in the work.</p>
+        <p style="color:var(--gray);line-height:1.9;margin-bottom:40px">What started as a 2,000 sq ft studio has evolved into a 50,000 sq ft performance campus with over 3,500 members and 12 of the most credentialed coaches in the industry. Our obsession hasn't changed: <em style="color:var(--white)">extraordinary results for extraordinary people.</em></p>
+        <a href="services.html" class="btn-lime">Explore Programs →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="section" style="background:var(--dark)">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Purpose</div>
+      <h2 class="section-title">MISSION & <span>VISION</span></h2>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card reveal d-1">
+        <h3>Our <span>Mission</span></h3>
+        <p>To empower every individual who walks through our doors with the knowledge, tools, and community to achieve their peak physical potential — without compromise, without excuses, without limits.</p>
+      </div>
+      <div class="mv-card reveal d-2">
+        <h3>Our <span>Vision</span></h3>
+        <p>To become the global standard for premium fitness experiences. A place where science meets sweat, where technology meets human potential, and where every member leaves better than they arrived.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">By The Numbers</div>
+      <h2 class="section-title">OUR <span>ACHIEVEMENTS</span></h2>
+    </div>
+    <div class="achieve-grid stagger-children">
+      <div class="achieve-item reveal d-1"><span class="achieve-num" data-count="3500" data-suffix="+">0+</span><span class="achieve-label">Active Members</span></div>
+      <div class="achieve-item reveal d-2"><span class="achieve-num" data-count="12000" data-suffix="+">0+</span><span class="achieve-label">Transformations</span></div>
+      <div class="achieve-item reveal d-3"><span class="achieve-num" data-count="12" data-suffix="+">0+</span><span class="achieve-label">Elite Coaches</span></div>
+      <div class="achieve-item reveal d-4"><span class="achieve-num" data-count="98" data-suffix="%">0%</span><span class="achieve-label">Satisfaction Rate</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINERS -->
+<section class="section" style="background:var(--dark)">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">The Collective</div>
+      <h2 class="section-title">MEET THE <span>TEAM</span></h2>
+    </div>
+    <div class="trainer-full-grid stagger-children">
+      <div class="tf-card-full reveal d-1">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80" alt="Trainer"/>
+        <div class="tc-info"><h3>Marcus Dean</h3><span>Founder & Head Coach</span><p>CSCS • 10+ Years</p></div>
+      </div>
+      <div class="tf-card-full reveal d-2">
+        <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=500&q=80" alt="Trainer"/>
+        <div class="tc-info"><h3>Elena Torres</h3><span>HIIT Specialist</span><p>NASM-CPT • 8 Years</p></div>
+      </div>
+      <div class="tf-card-full reveal d-3">
+        <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=500&q=80" alt="Trainer"/>
+        <div class="tc-info"><h3>James Wright</h3><span>Nutrition Coach</span><p>ACE-CPT • 12 Years</p></div>
+      </div>
+      <div class="tf-card-full reveal d-4">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&q=80" alt="Trainer"/>
+        <div class="tc-info"><h3>Priya Sharma</h3><span>Yoga & Recovery</span><p>RYT-500 • 6 Years</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">History</div>
+      <h2 class="section-title">OUR <span>JOURNEY</span></h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-content"><div class="tl-year">2016</div><h4>The Beginning</h4><p>Marcus Dean opens NEXUS in a 2,000 sq ft studio with 3 coaches and 50 founding members who believed in the vision.</p></div>
+        <div class="tl-dot"></div>
+        <div style="flex:1"></div>
+      </div>
+      <div class="tl-item reveal d-1">
+        <div style="flex:1"></div>
+        <div class="tl-dot"></div>
+        <div class="tl-content"><div class="tl-year">2018</div><h4>First Expansion</h4><p>We moved to a 15,000 sq ft facility, hired 8 additional trainers and launched our signature programs reaching 800 members.</p></div>
+      </div>
+      <div class="tl-item reveal d-2">
+        <div class="tl-content"><div class="tl-year">2021</div><h4>Technology Overhaul</h4><p>Introduced data-driven performance tracking, biometric scanning, and our proprietary app for complete member analytics.</p></div>
+        <div class="tl-dot"></div>
+        <div style="flex:1"></div>
+      </div>
+      <div class="tl-item reveal d-3">
+        <div style="flex:1"></div>
+        <div class="tl-dot"></div>
+        <div class="tl-content"><div class="tl-year">2024</div><h4>The Campus</h4><p>Opened our flagship 50,000 sq ft performance campus with world-class equipment, recovery suites, and a nutrition bar.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" style="background:var(--dark)">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">The Space</div>
+      <h2 class="section-title">GYM <span>GALLERY</span></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item tall reveal d-1">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" alt="Gym"/>
+      </div>
+      <div class="gallery-item reveal d-2">
+        <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=600&q=80" alt="Gym"/>
+      </div>
+      <div class="gallery-item reveal d-3">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80" alt="Gym"/>
+      </div>
+      <div class="gallery-item reveal d-2">
+        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80" alt="Gym"/>
+      </div>
+      <div class="gallery-item reveal d-3">
+        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="Gym"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a class="nav-logo" href="index.html">
+    <svg class="logo-svg-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="lgN" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#B6FF3B"/><stop offset="100%" stop-color="#7EC820"/></linearGradient></defs><polygon points="16,1 30,8.5 30,23.5 16,31 2,23.5 2,8.5" stroke="url(#lgN)" stroke-width="1.5" fill="none"/><path d="M10 22 L10 10 L22 22 L22 10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="logo-wordmark">NEX<em>US</em></span>
+  </a><p>The premium fitness destination for those who demand extraordinary results.</p><div class="footer-socials"><a class="social-icon" href="#">IG</a><a class="social-icon" href="#">FB</a><a class="social-icon" href="#">YT</a><a class="social-icon" href="#">TW</a></div></div>
+      <div><h4 class="footer-heading">Navigation</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4 class="footer-heading">Programs</h4><ul class="footer-links"><li><a href="services.html">Fat Blast HIIT</a></li><li><a href="services.html">Strength Builder</a></li><li><a href="services.html">Power Athlete</a></li><li><a href="services.html">1-on-1 Coaching</a></li></ul></div>
+      <div><h4 class="footer-heading">Contact</h4><ul class="footer-links"><li><a href="tel:+11234567890">+1 (123) 456-7890</a></li><li><a href="mailto:hello@nexusgym.com">hello@nexusgym.com</a></li><li><a href="#">123 Fitness Ave, NY</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 NEXUS GYM.</p><p>Built for elite athletes.</p></div>
+  </div>
+</footer>
+</div> <!-- END APP WRAPPER -->
+<div id="back-top">↑</div>
+<a class="wa-float" href="https://wa.me/11234567890" target="_blank">💬</a>
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>
+
+

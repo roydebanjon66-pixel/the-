@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>NEXUS GYM — Forge Your Legacy</title>
+<meta name="description" content="Premium fitness facility. Elite training. Extraordinary results. Join NEXUS GYM today."/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/home.css"/>
+<link rel="stylesheet" href="css/animations.css"/>
+<link rel="stylesheet" href="css/logo.css"/>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <canvas id="pl-canvas"></canvas>
+  <div class="pl-content">
+    <div class="pl-letters" id="pl-letters">
+      <span class="letter">N</span>
+      <span class="letter">E</span>
+      <span class="letter">X</span>
+      <span class="letter">U</span>
+      <span class="letter">S</span>
+    </div>
+    <div class="pl-counter" id="pl-counter">0%</div>
+    <div class="pl-scan-wrap">
+      <div class="pl-scan-line"></div>
+    </div>
+  </div>
+</div>
+
+<div id="app-wrapper" class="is-blurred">
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <svg class="logo-svg-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="lgN" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#B6FF3B"/><stop offset="100%" stop-color="#7EC820"/></linearGradient></defs><polygon points="16,1 30,8.5 30,23.5 16,31 2,23.5 2,8.5" stroke="url(#lgN)" stroke-width="1.5" fill="none"/><path d="M10 22 L10 10 L22 22 L22 10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="logo-wordmark">NEX<em>US</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="pricing.html" class="nav-cta">Join Now</a></li>
+  </ul>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg parallax-layer"></div>
+  <div class="hero-overlay"></div>
+  <div class="bg-grid"></div>
+  <div class="float-shape s1"></div>
+  <div class="float-shape s2"></div>
+  <div class="hero-content">
+    <div class="hero-tag reveal">Elite Performance Gym</div>
+    <h1 class="hero-title reveal d-1">
+      MAKE YOUR<br>
+      BODY <span class="typing-text" data-words='["SHAPE.","STRONGER.","LEGENDARY.","UNSTOPPABLE."]'>SHAPE.</span>
+    </h1>
+    <p class="hero-sub reveal d-2">Transform your physique with world-class coaching, cutting-edge equipment, and a community built on results.</p>
+    <div class="hero-btns reveal d-3">
+      <a href="pricing.html" class="btn-lime">Start Today <span>→</span></a>
+      <a href="about.html" class="btn-outline">Our Story</a>
+    </div>
+    <div class="hero-stats reveal d-4">
+      <div class="hs"><span data-count="3500" data-suffix="+">0+</span><small>Members</small></div>
+      <div class="hs-div"></div>
+      <div class="hs"><span data-count="98" data-suffix="%">0%</span><small>Success Rate</small></div>
+      <div class="hs-div"></div>
+      <div class="hs"><span data-count="12" data-suffix="+">0+</span><small>Expert Trainers</small></div>
+      <div class="hs-div"></div>
+      <div class="hs"><span data-count="8" data-suffix=" Yrs">0</span><small>In Business</small></div>
+    </div>
+  </div>
+  <div class="hero-img-wrap">
+    <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=900&q=80" alt="Athlete training"/>
+    <div class="hero-img-glow"></div>
+  </div>
+  <a href="#programs" class="scroll-cue">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </a>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-item reveal"><span class="stat-num" data-count="15000" data-suffix="+">0+</span><span class="stat-label">Workouts Completed</span></div>
+      <div class="stat-item reveal d-1"><span class="stat-num" data-count="250" data-suffix="+">0+</span><span class="stat-label">Programs Available</span></div>
+      <div class="stat-item reveal d-2"><span class="stat-num" data-count="50" data-suffix="+">0+</span><span class="stat-label">Equipment Pieces</span></div>
+      <div class="stat-item reveal d-3"><span class="stat-num" data-count="99" data-suffix="%">0%</span><span class="stat-label">Member Satisfaction</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMS -->
+<section class="section" id="programs">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Training Systems</div>
+      <h2 class="section-title">ELITE <span>PROGRAMS</span></h2>
+      <p class="section-sub">Science-backed programs designed to push your limits and deliver extraordinary results.</p>
+    </div>
+    <div class="programs-grid stagger-children">
+      <div class="prog-card glass-card reveal d-1">
+        <div class="prog-icon">🔥</div>
+        <h3>Fat Blast HIIT</h3>
+        <p>High-intensity intervals engineered for maximum fat loss and metabolic conditioning.</p>
+        <div class="prog-meta"><span>45 min</span><span>All Levels</span></div>
+        <a href="services.html" class="prog-link">Explore →</a>
+      </div>
+      <div class="prog-card glass-card reveal d-2">
+        <div class="prog-icon">💪</div>
+        <h3>Strength Builder</h3>
+        <p>Progressive overload systems designed to build raw power and muscle hypertrophy.</p>
+        <div class="prog-meta"><span>60 min</span><span>Intermediate</span></div>
+        <a href="services.html" class="prog-link">Explore →</a>
+      </div>
+      <div class="prog-card glass-card reveal d-3">
+        <div class="prog-icon">⚡</div>
+        <h3>Power Athlete</h3>
+        <p>Athletic performance training combining speed, agility, and explosive strength.</p>
+        <div class="prog-meta"><span>75 min</span><span>Advanced</span></div>
+        <a href="services.html" class="prog-link">Explore →</a>
+      </div>
+      <div class="prog-card glass-card reveal d-4">
+        <div class="prog-icon">🧘</div>
+        <h3>Flex & Recovery</h3>
+        <p>Mobility, flexibility and active recovery sessions for peak performance longevity.</p>
+        <div class="prog-meta"><span>50 min</span><span>All Levels</span></div>
+        <a href="services.html" class="prog-link">Explore →</a>
+      </div>
+      <div class="prog-card glass-card reveal d-1">
+        <div class="prog-icon">🥊</div>
+        <h3>Combat Fit</h3>
+        <p>Boxing and martial arts inspired conditioning. High calorie burn and full body engagement.</p>
+        <div class="prog-meta"><span>60 min</span><span>Beginner</span></div>
+        <a href="services.html" class="prog-link">Explore →</a>
+      </div>
+      <div class="prog-card glass-card reveal d-2">
+        <div class="prog-icon">🎯</div>
+        <h3>1-on-1 Coaching</h3>
+        <p>Fully personalized sessions with elite certified trainers. Maximum results guaranteed.</p>
+        <div class="prog-meta"><span>60 min</span><span>Premium</span></div>
+        <a href="services.html" class="prog-link">Explore →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="neon-line"></div>
+
+<!-- TRAINERS -->
+<section class="section" id="trainers">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">The Elite</div>
+      <h2 class="section-title">MEET THE <span>COACHES</span></h2>
+      <p class="section-sub">Certified world-class trainers with proven track records and elite results.</p>
+    </div>
+    <div class="trainers-grid stagger-children">
+      <div class="trainer-card reveal d-1">
+        <div class="tc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Trainer"/>
+          <div class="tc-overlay">
+            <a href="about.html" class="btn-lime">View Profile</a>
+          </div>
+        </div>
+        <div class="tc-info">
+          <h3>Marcus Dean</h3>
+          <span class="badge badge-lime">Strength & Power</span>
+          <p>CSCS • 10+ Years • 500+ Transformations</p>
+        </div>
+      </div>
+      <div class="trainer-card reveal d-2">
+        <div class="tc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=600&q=80" alt="Trainer"/>
+          <div class="tc-overlay">
+            <a href="about.html" class="btn-lime">View Profile</a>
+          </div>
+        </div>
+        <div class="tc-info">
+          <h3>Elena Torres</h3>
+          <span class="badge badge-lime">HIIT & Cardio</span>
+          <p>NASM-CPT • 8 Years • CrossFit L3</p>
+        </div>
+      </div>
+      <div class="trainer-card reveal d-3">
+        <div class="tc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=600&q=80" alt="Trainer"/>
+          <div class="tc-overlay">
+            <a href="about.html" class="btn-lime">View Profile</a>
+          </div>
+        </div>
+        <div class="tc-info">
+          <h3>James Wright</h3>
+          <span class="badge badge-lime">Nutrition & Body Comp</span>
+          <p>ACE-CPT • 12 Years • 700+ Clients</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section why-section">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-left reveal-left">
+        <div class="section-tag">Why Nexus</div>
+        <h2 class="section-title">THE NEXUS<br><span>DIFFERENCE</span></h2>
+        <p class="section-sub">We don't just build bodies. We build discipline, confidence, and lifelong performance habits that outlast any program.</p>
+        <a href="about.html" class="btn-lime" style="margin-top:40px">Discover More</a>
+      </div>
+      <div class="why-right">
+        <div class="why-card glass-card reveal d-1">
+          <div class="why-icon">🏆</div>
+          <div>
+            <h4>Elite Certified Coaches</h4>
+            <p>Every trainer holds internationally recognized certifications with proven track records.</p>
+          </div>
+        </div>
+        <div class="why-card glass-card reveal d-2">
+          <div class="why-icon">⚙️</div>
+          <div>
+            <h4>World-Class Equipment</h4>
+            <p>50,000 sq ft of premium Technogym and Life Fitness equipment. The best tools for the best results.</p>
+          </div>
+        </div>
+        <div class="why-card glass-card reveal d-3">
+          <div class="why-icon">📊</div>
+          <div>
+            <h4>Data-Driven Progress</h4>
+            <p>Regular body composition scans, performance tracking, and personalized analytics for every member.</p>
+          </div>
+        </div>
+        <div class="why-card glass-card reveal d-4">
+          <div class="why-icon">🤝</div>
+          <div>
+            <h4>Community & Accountability</h4>
+            <p>A powerful community of like-minded individuals who push each other to the next level every day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION -->
+<section class="section transform-section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Real Results</div>
+      <h2 class="section-title">PROVEN <span>TRANSFORMATIONS</span></h2>
+    </div>
+    <div class="transform-grid">
+      <div class="tf-card reveal d-1">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80" alt="Transformation"/>
+        <div class="tf-overlay">
+          <div class="tf-stat">-18 KG</div>
+          <div class="tf-name">Alex R. — 90 Days</div>
+        </div>
+      </div>
+      <div class="tf-card reveal d-2">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" alt="Transformation"/>
+        <div class="tf-overlay">
+          <div class="tf-stat">+12 KG Muscle</div>
+          <div class="tf-name">Marcus S. — 6 Months</div>
+        </div>
+      </div>
+      <div class="tf-card reveal d-3">
+        <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=600&q=80" alt="Transformation"/>
+        <div class="tf-overlay">
+          <div class="tf-stat">-25 KG</div>
+          <div class="tf-name">Sara M. — 5 Months</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING PREVIEW -->
+<section class="section pricing-preview">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Membership</div>
+      <h2 class="section-title">SIMPLE <span>PRICING</span></h2>
+      <p class="section-sub">No hidden fees. No contracts. First week always free.</p>
+    </div>
+    <div class="pp-grid">
+      <div class="pp-card glass-card reveal d-1">
+        <div class="pp-tier">Starter</div>
+        <div class="pp-price">$49<span>/mo</span></div>
+        <ul class="pp-features">
+          <li>✓ Gym Access (6AM–10PM)</li>
+          <li>✓ 2 Group Classes/Week</li>
+          <li>✓ Locker Room Access</li>
+          <li class="off">✗ Personal Training</li>
+        </ul>
+        <a href="pricing.html" class="btn-outline" style="width:100%;text-align:center;justify-content:center">Get Started</a>
+      </div>
+      <div class="pp-card glass-card featured featured-glow reveal d-2">
+        <div class="pp-badge">Most Popular</div>
+        <div class="pp-tier">Pro</div>
+        <div class="pp-price">$89<span>/mo</span></div>
+        <ul class="pp-features">
+          <li>✓ 24/7 Gym Access</li>
+          <li>✓ Unlimited Group Classes</li>
+          <li>✓ 4 PT Sessions/Month</li>
+          <li>✓ Nutrition Coaching</li>
+        </ul>
+        <a href="pricing.html" class="btn-lime glow-pulse">Join Pro</a>
+      </div>
+      <div class="pp-card glass-card reveal d-3">
+        <div class="pp-tier">Elite</div>
+        <div class="pp-price">$149<span>/mo</span></div>
+        <ul class="pp-features">
+          <li>✓ Everything in Pro</li>
+          <li>✓ Unlimited PT Sessions</li>
+          <li>✓ Body Composition Scans</li>
+          <li>✓ VIP Lounge Access</li>
+        </ul>
+        <a href="pricing.html" class="btn-outline" style="width:100%;text-align:center;justify-content:center">Go Elite</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Member Stories</div>
+      <h2 class="section-title">WHAT THEY <span>SAY</span></h2>
+    </div>
+    <div class="testimonials-wrap">
+      <div class="testimonial-slide">
+        <div class="t-quote">"NEXUS completely changed my life. I lost 20kg in 4 months with the HIIT program and Marcus's coaching. Best investment I've ever made."</div>
+        <div class="t-author"><div class="t-avatar">AR</div><div><strong>Alex Rahman</strong><small>Lost 20 KG — 4 Months</small></div></div>
+        <div class="t-stars">★★★★★</div>
+      </div>
+      <div class="testimonial-slide">
+        <div class="t-quote">"The trainers here are next level. I've been to 5 different gyms and NEXUS is the only one that actually delivered real results. Gained 10kg of muscle."</div>
+        <div class="t-author"><div class="t-avatar">SM</div><div><strong>Sarah Mitchell</strong><small>Gained 10 KG Muscle — 6 Months</small></div></div>
+        <div class="t-stars">★★★★★</div>
+      </div>
+      <div class="testimonial-slide">
+        <div class="t-quote">"The community and accountability at NEXUS is unreal. Every session pushes you further. I'm in the best shape of my life at 42 years old."</div>
+        <div class="t-author"><div class="t-avatar">DK</div><div><strong>David Kim</strong><small>Elite Member — 1 Year</small></div></div>
+        <div class="t-stars">★★★★★</div>
+      </div>
+      <div class="t-controls">
+        <button class="t-prev">←</button>
+        <div class="t-dots">
+          <span class="t-dot"></span>
+          <span class="t-dot"></span>
+          <span class="t-dot"></span>
+        </div>
+        <button class="t-next">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATORS -->
+<section class="section calcs-section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Smart Tools</div>
+      <h2 class="section-title">YOUR <span>ANALYTICS</span></h2>
+    </div>
+    <div class="calcs-grid">
+      <!-- BMI -->
+      <div class="calc-card glass-card reveal d-1">
+        <h3>BMI Calculator</h3>
+        <p>Find your Body Mass Index and get a personalized recommendation.</p>
+        <form id="bmi-form">
+          <div class="form-group">
+            <label>Height (cm)</label>
+            <input type="number" id="bmi-h" placeholder="175" min="100" max="250" required/>
+          </div>
+          <div class="form-group">
+            <label>Weight (kg)</label>
+            <input type="number" id="bmi-w" placeholder="75" min="30" max="300" required/>
+          </div>
+          <button type="submit" class="btn-lime" style="width:100%;justify-content:center">Calculate</button>
+        </form>
+        <div id="bmi-result" class="calc-result"></div>
+      </div>
+      <!-- CALORIE -->
+      <div class="calc-card glass-card reveal d-2">
+        <h3>Calorie Calculator</h3>
+        <p>Calculate your daily calorie needs based on your goals and activity level.</p>
+        <form id="cal-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Age</label>
+              <input type="number" id="cal-age" placeholder="25" min="15" max="80" required/>
+            </div>
+            <div class="form-group">
+              <label>Gender</label>
+              <select id="cal-gender"><option value="male">Male</option><option value="female">Female</option></select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Height (cm)</label>
+              <input type="number" id="cal-h" placeholder="175" required/>
+            </div>
+            <div class="form-group">
+              <label>Weight (kg)</label>
+              <input type="number" id="cal-w" placeholder="75" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Activity Level</label>
+            <select id="cal-act">
+              <option value="1.2">Sedentary</option>
+              <option value="1.375">Lightly Active</option>
+              <option value="1.55" selected>Moderately Active</option>
+              <option value="1.725">Very Active</option>
+              <option value="1.9">Extremely Active</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-lime" style="width:100%;justify-content:center">Calculate</button>
+        </form>
+        <div id="cal-result" class="calc-result"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTDOWN OFFER -->
+<section class="countdown-section">
+  <div class="container">
+    <div class="cd-inner reveal">
+      <div>
+        <div class="section-tag">Limited Offer</div>
+        <h2 class="section-title">FIRST WEEK <span>FREE</span></h2>
+        <p style="color:var(--gray)">Claim your free trial before this offer expires. No credit card required.</p>
+      </div>
+      <div id="countdown" class="countdown"></div>
+      <a href="pricing.html" class="btn-lime">Claim Free Week</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-title">COMMON <span>QUESTIONS</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal d-1">
+        <div class="faq-q"><span>Is there a joining fee?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>No joining fees ever. Your first week is completely free with no commitment required. We let our results speak for themselves.</p></div>
+      </div>
+      <div class="faq-item reveal d-2">
+        <div class="faq-q"><span>Can I cancel anytime?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Absolutely. All memberships are month-to-month. Cancel anytime without penalties. We believe in earning your loyalty every single month.</p></div>
+      </div>
+      <div class="faq-item reveal d-3">
+        <div class="faq-q"><span>What are your opening hours?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>We're open 24/7 for Pro and Elite members. Starter members have access from 6 AM to 10 PM daily including weekends.</p></div>
+      </div>
+      <div class="faq-item reveal d-4">
+        <div class="faq-q"><span>Do you offer nutrition coaching?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Yes! Our Pro and Elite memberships include personalized nutrition guidance. We also offer standalone nutrition coaching packages for non-members.</p></div>
+      </div>
+      <div class="faq-item reveal d-1">
+        <div class="faq-q"><span>Is the gym suitable for beginners?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>100%. We welcome all fitness levels. Every new member receives a free orientation session to learn the equipment and create a personalized training plan.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html">
+          <svg class="logo-svg-mark" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="lgF" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#B6FF3B"/><stop offset="100%" stop-color="#7EC820"/></linearGradient></defs><polygon points="16,1 30,8.5 30,23.5 16,31 2,23.5 2,8.5" stroke="url(#lgF)" stroke-width="1.5" fill="none"/><path d="M10 22 L10 10 L22 22 L22 10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="logo-wordmark">NEX<em>US</em></span>
+        </a>
+        <p>The premium fitness destination for those who demand extraordinary results. Forge your legacy with us.</p>
+        <div class="footer-socials">
+          <a class="social-icon" href="#">IG</a>
+          <a class="social-icon" href="#">FB</a>
+          <a class="social-icon" href="#">YT</a>
+          <a class="social-icon" href="#">TW</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Programs</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Fat Blast HIIT</a></li>
+          <li><a href="services.html">Strength Builder</a></li>
+          <li><a href="services.html">Power Athlete</a></li>
+          <li><a href="services.html">Combat Fit</a></li>
+          <li><a href="services.html">1-on-1 Coaching</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="tel:+11234567890">+1 (123) 456-7890</a></li>
+          <li><a href="mailto:hello@nexusgym.com">hello@nexusgym.com</a></li>
+          <li><a href="#">123 Fitness Ave, NY 10001</a></li>
+          <li><a href="#">Mon–Sun: 24/7 (Pro+)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 NEXUS GYM. All Rights Reserved.</p>
+      <p>Designed with ⚡ for elite athletes.</p>
+    </div>
+  </div>
+</footer>
+
+</div> <!-- END APP WRAPPER -->
+
+<div id="back-top">↑</div>
+<a class="wa-float" href="https://wa.me/11234567890" target="_blank">💬</a>
+
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>
+
